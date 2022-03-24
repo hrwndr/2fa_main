@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 const PORT = process.env.PORT || 2222
 
@@ -24,7 +25,7 @@ app.use('/api', verifyRoute)
 app.use('/api', verifyTokenRoute)
 
 app.get('/', (req, res) => {
-    res.send('Helooo')
+    res.sendFile(path.join('client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
