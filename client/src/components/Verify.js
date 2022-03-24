@@ -28,7 +28,7 @@ function Verify() {
                 if (!data.error) {
                     setMsg({ type: 'success', msg: data.message, view: 'block' })
                     localStorage.setItem('token', data.token)
-                    navigate(`/dashboard/${uid}`)
+                    navigate(`/dashboard`)
                 } else {
                     setMsg({ type: 'danger', msg: data.message, view: 'block' })
                 }
